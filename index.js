@@ -1,17 +1,24 @@
 function popUpRandomMole(){
     const moleHeads = document.querySelectorAll(".wgs__mole-head:not(.wgs__mole-head.--whacked)");
+    if(moleHeads.length === 0){
+        window.alert("CONGRATS!! You Won!")
+        window.location.reload()
+    }
     let randomIndex = Math.floor(Math.random()* moleHeads.length)
     const moleToRemove = moleHeads[randomIndex]
     moleToRemove.classList.remove("--hidden");
-    const score = document.querySelector('.score-number')
     const moleHeadsWhacked = document.querySelectorAll(".wgs__mole-head.--whacked");
+    const score = document.querySelector('.score-number')
+    
     score.innerHTML = moleHeadsWhacked.length
-    console.log(moleHeads.length)
-        setTimeout(() => {
-                hideMole(moleToRemove)
-        }, 3000);
 
-        return;
+    console.log(moleHeads.length)
+    
+    setTimeout(() => {
+        hideMole(moleToRemove);
+    }, 500);
+    
+    return;
     
 }
 
@@ -27,14 +34,9 @@ window.addEventListener('DOMContentLoaded', () => {
     
     setTimeout(() => {
         popUpRandomMole()
-        
-        
+             
     }, 0)
     
-    
-    if(moleHeads.length === 0){
-        window.alert("CONGRATS!! You Won!")
-    }
     
     moleHeads.forEach(mole => {
         mole.addEventListener('click', event =>{
@@ -42,5 +44,6 @@ window.addEventListener('DOMContentLoaded', () => {
             mole.classList.add('--whacked');
         })
     })
+    
 
 });
