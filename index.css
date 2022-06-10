@@ -45,3 +45,12 @@ body{
 .custom-cur{
     cursor:crosshair;
 }
+.titleblock{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+.score-number{
+    color:red;
+}

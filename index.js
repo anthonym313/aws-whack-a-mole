@@ -16,7 +16,7 @@ function popUpRandomMole(){
     
     setTimeout(() => {
         hideMole(moleToRemove);
-    }, 500);
+    }, 1000);
     
     return;
     
