@@ -3,9 +3,16 @@ function popUpRandomMole(){
     let randomIndex = Math.floor(Math.random()* moleHeads.length)
     const moleToRemove = moleHeads[randomIndex]
     moleToRemove.classList.remove("--hidden");
-    setTimeout(() => {
-        hideMole(moleToRemove)
-    }, 3000);
+    const score = document.querySelector('.score-number')
+    const moleHeadsWhacked = document.querySelectorAll(".wgs__mole-head.--whacked");
+    score.innerHTML = moleHeadsWhacked.length
+    console.log(moleHeads.length)
+        setTimeout(() => {
+                hideMole(moleToRemove)
+        }, 3000);
+
+        return;
+    
 }
 
 function hideMole(mole) {
@@ -16,23 +23,24 @@ function hideMole(mole) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    const moleHeads= document.querySelectorAll('.wgs__mole-head');
+    
     setTimeout(() => {
         popUpRandomMole()
+        
+        
     }, 0)
-
-    const moleHeads = document.querySelectorAll('.wgs__mole-head');
-    const moleHeadswhacked = document.querySelectorAll(".wgs__mole-head:not(.wgs__mole-head.--whacked)");
-
-
-    if(moleHeadswhacked.length === 0 ){
+    
+    
+    if(moleHeads.length === 0){
         window.alert("CONGRATS!! You Won!")
     }
+    
     moleHeads.forEach(mole => {
         mole.addEventListener('click', event =>{
             mole.classList.add('--hidden');
             mole.classList.add('--whacked');
         })
     })
-
 
 });
