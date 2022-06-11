@@ -3,6 +3,7 @@ body{
     margin: 0;
     width:100%;
     background-color: bisque;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .wgs {
     height: 241px;
@@ -53,4 +54,63 @@ body{
 }
 .score-number{
     color:red;
+}
+
+.api-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.api-form{
+    max-width: 320px;
+    padding: 30px;
+}
+
+input{
+    border: none;
+	border-bottom: 2px solid #d4d1d1;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+.input__field{
+    padding: 10px 0px;	
+	position: relative;	
+}
+input:active,
+input:focus,
+input:hover{
+    outline: none;
+	border-bottom-color: #aa3434;
+}
+
+button {
+	background: #aa3434;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	width: 100%;
+	color: #fff;
+	box-shadow: 0px 2px 2px #993b3bef;
+	cursor: pointer;
+	transition: .2s;
+}
+
+button:active,
+button:focus,
+button:hover {
+	border-color: #aa3434;
+	outline: none;
 }
